@@ -43,17 +43,17 @@ if __name__ == '__main__':
     longest = g.find_longest_cycle()
     print(len(longest), longest)
 
-    # for team in get_all_teams(results):
-    #     if team != "Eagles":
+    for team in get_all_teams(results):
+        if team != "Eagles":
 
-    #         g = Graph(directed=True)
-    #         for res in results:
-    #             g.add_connections(res)
-    #         g.add(team, "Eagles")
-    #         cycle = g.find_longest_cycle()
+            g = Graph(directed=True)
+            for res in results:
+                g.add_connections(res)
+            g.add(team, "Eagles")
+            cycle = g.find_longest_cycle()
 
-    #         result = len(cycle) == 32
+            result = len(cycle) == 32
 
-    #         print("{}: {}".format(team, result))
+            print("{}: {}".format(team, result))
 
     print("Time elapsed: {}".format(time()-start))

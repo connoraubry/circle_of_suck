@@ -41,8 +41,9 @@ if __name__ == '__main__':
     for res in results:
         g.add_connections(res)
     pp(g._graph)
-    longest = g.find_longest_cycle()
-    print(len(longest), longest)
+    all_cycles = g.find_all_cycles()
+    for c in all_cycles:
+        print(len(c), c)
 
 
     print("Time elapsed: {}".format(time()-start))
